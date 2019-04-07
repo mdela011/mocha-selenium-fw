@@ -1,0 +1,20 @@
+{
+  "name": "mocha-framework",
+  "version": "1.0.0",
+  "description": "mocha test automation framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "smoke-test-stage-firefox": "env key=stage browser=firefox mocha --grep @smoke --timeout 400000 || echo",
+    "smoke-test-stage-chrome": "env key=stage browser=chrome mocha --grep @smoke --timeout 400000 || echo"
+  },
+  "author": "Michael",
+  "license": "ISC",
+  "dependencies": {
+    "chromedriver": "^2.46.0",
+    "geckodriver": "^1.16.1",
+    "mocha": "^6.0.2",
+    "selenium-drivers": "^2.1.0",
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  }
+}
