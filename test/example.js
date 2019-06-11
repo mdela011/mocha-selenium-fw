@@ -21,7 +21,7 @@ describe('Array', function() {
       //   console.log(result) // "Some User token"
       //   assert.equal(result,'Home Page'); 
 
-     })
+     //})
   });
 
 
