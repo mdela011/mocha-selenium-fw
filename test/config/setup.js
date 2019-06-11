@@ -5,7 +5,12 @@ var {driver} = require('./webdriver')
 before(function(){ 
     //try to get url, catch error if driver not initialized
     try{
-            driver.get('http://localhost:8080');
+        
+            //comment afterwards
+            driver.get('https://www.gamestop.com/');
+            
+            //local site
+            //driver.get('http://localhost:8080');
            // return driver; //+ this doesnt execute 'END of BEFORE' below
     }
     catch{

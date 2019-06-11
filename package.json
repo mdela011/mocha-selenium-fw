@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "smoke-test-stage-firefox": "env key=stage browser=firefox mocha --grep @smoke --timeout 400000 || echo",
-    "smoke-test-stage-chrome": "env key=stage browser=chrome mocha --grep @smoke --timeout 400000 || echo"
+    "smoke-test-stage-chrome": "env key=stage browser=chrome mocha --grep @smoke --timeout 400000 || echo",
+    "smoke-test-gs-chrome": "env key=stage browser=chrome mocha --grep @gamestop --timeout 400000 || echo"
   },
   "author": "Michael",
   "license": "ISC",
