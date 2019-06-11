@@ -1,3 +1,6 @@
+let navLocators = require ('./locators/navbar');
+let homeLocators = require ('./locators/home')
+
 const {Builder, By, until} = require('selenium-webdriver');
 var assert = require('assert');
 
@@ -6,35 +9,20 @@ const {driver} = require('./config/setup')
 
 describe('Array', function() {
   describe('#indexOf()', function() {
-    this.slow(10000)
-    it('should return -1 when the value is not present @smoke', async () => {
-        console.log("driver 2")
+    it('TC 01 - Verify Home page text - @smoke', async () => {
         //console.log(driver);
-        driver.sleep(5000);
-        // driver.findElement(By.name('q')).sendKeys('nehalist');
-        var elem = await driver.findElement(By.css('#hello'));
-        console.log(elem.getText())
+        var elem = await driver.findElement(By.css(homeLocators.helloText)); 
 
-        elem.getText().then(function(result) {
+        //return checked tc
+        return elem.getText().then(function(result) {
           console.log(result) // "Some User token"
-          assert.equal(result,'Hello World'); 
+          assert.equal(result,'Home Page'); 
 
        })
-        // driver.wait(until.elementLocated(By.id('search')));
-        // driver.findElement(By.linkText('nehalist.io')).click();
-        // driver.wait(until.titleIs('nehalist.io'));
-        
-        //return assert.equal(elem.getText(),'Hello World'); 
-        //assert.equal([1, 2, 3].indexOf(4), -1);
     });
 
-    it('should return -1 when the value is not present @smoke', function() {
-            console.log("driver 3")
-            //console.log(driver);
-            driver.sleep(5000);
-            // driver.findElement(By.name('q')).sendKeys('nehalist');
-            
-            var elems = driver.findElements(By.css('#menu > li.ant-menu-item'));
+    it('TC 02 - Verify 5 options on Nav bar - @smoke', function() {
+            var elems = driver.findElements(By.css(navLocators.navBarMenuItems));
             //console.log(elems.getText())
 
             elems.then(function(result)
@@ -44,5 +32,47 @@ describe('Array', function() {
 
           })
       });
+
+      it('TC 03 - Verify Listings navigation links & url - @smoke', async () => {
+        await driver.findElement(By.css(navLocators.listingNavLink)).click();
+        
+        return driver.getCurrentUrl().then(function(result){
+          assert.equal(result,'http://localhost:8080/listings')
+        })
+  });
+
+  it('TC 04 - Verify About navigation links & url - @smoke', async () => {
+    await driver.findElement(By.css(navLocators.aboutNavLink)).click();
+    
+    return driver.getCurrentUrl().then(function(result){
+      assert.equal(result,'http://localhost:8080/about')
+    })
+});
+
+it('TC 05 - Verify Reviews navigation links & url - @smoke', async () => {
+  await driver.findElement(By.css(navLocators.reviewsNavLink)).click();
+  
+  return driver.getCurrentUrl().then(function(result){
+    assert.equal(result,'http://localhost:8080/reviews')
+  })
+});
+
+it('TC 06 - Verify Contact navigation links & url - @smoke', async () => {
+  await driver.findElement(By.css(navLocators.contactNavLink)).click();
+  
+  return driver.getCurrentUrl().then(function(result){
+    assert.equal(result,'http://localhost:8080/contactus')
+  })
+});
+
+it('TC 06 - Verify Home navigation links & url - @smoke', async () => {
+  await driver.findElement(By.css(navLocators.homeNavLink)).click();
+  
+  return driver.getCurrentUrl().then(function(result){
+    assert.equal(result,'http://localhost:8080/')
+  })
+});
+
+
   });
 });
