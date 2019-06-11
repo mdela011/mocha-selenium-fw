@@ -1,7 +1,9 @@
+sudo: true
+
 addons:
  chrome: stable
 
- language: node_js
+language: node_js
 node_js:
  - "stable"
 
