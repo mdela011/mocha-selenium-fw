@@ -10,19 +10,38 @@ const {driver} = require('./config/setup')
 describe('Array', function() {
   describe('#indexOf()', function() {
     
-    it('TC 00 - Verify tCI working - @gamestop', async () => {
+    it('TC 00 - Verify tCI working - @gamestop', function() {
       //console.log(driver);
       console.log("GUI WORKING")
-      assert.equal(true,true)
-      // var elem = await driver.findElement(By.css(homeLocators.helloText)); 
-
-      // //return checked tc
-      // return elem.getText().then(function(result) {
-      //   console.log(result) // "Some User token"
-      //   assert.equal(result,'Home Page'); 
-
-     //})
+      return driver.getTitle().then(function(result){
+        console.log(result)
+        assert.equal(result,"Consoles, Collectibles, Video Games and VR | GameStop")
+      })
   });
+
+  it('TC 001 - Verify gs url - @gamestop', function() {
+    //console.log(driver);
+    return driver.getCurrentUrl().then(function(result){
+      console.log(result)
+      assert.equal(result,"https://www.gamestop.com/")
+    })
+});
+
+//need to "return" otherwise TC doesnt fail?? *******
+it('TC 002 - Verify 6 gs options on Nav bar - @gamestop', function() 
+{
+    var elems = driver.findElements(By.css("#navline1 > ul > li"));
+
+      return elems.then(function(result)
+      {
+        console.log(result.length) // "Some User token"
+        assert.equal(result.length,5);
+    })
+});
+
+//--------------------------------------
+//-----testing GUI works on Travis CI
+//--------------------------------------
 
 
     it('TC 01 - Verify Home page text - @smoke', async () => {
