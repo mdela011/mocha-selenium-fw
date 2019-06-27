@@ -21,6 +21,7 @@ script:
 
 notifications:
  email: false
- slack: "solocoders:" secure: SLACK_KEY 
+ slack: "solocoders:"
+  secure: SLACK_KEY 
  on_success: always
  on_failure: always
