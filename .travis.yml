@@ -21,4 +21,4 @@ script:
 
 notification:
  email: false
- slack: travis encrypt "solocoders:Dx7Vk3AkjQ3SP4UW7VNsqa8D" --add notifications.slack
+ slack: "solocoders:Dx7Vk3AkjQ3SP4UW7VNsqa8D"
