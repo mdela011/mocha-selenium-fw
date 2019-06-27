@@ -21,4 +21,4 @@ script:
 
 notification:
  email: false
- slack: "solocoders:Dx7Vk3AkjQ3SP4UW7VNsqa8D"
+ slack: solocoders:Dx7Vk3AkjQ3SP4UW7VNsqa8D
