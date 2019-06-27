@@ -15,14 +15,12 @@ before_script:
  - "export DISPLAY=:99.0"
  - "sh -e /etc/init.d/xvfb start"
  - sleep 5 # give xvfb some time to start
- - printenv SLACK_KEY
- - echo "$SLACK_KEY"
 
 script:
  - npm run smoke-test-gs-chrome
 
 notifications:
  email: false
- slack: "solocoders:Dx7Vk3AkjQ3SP4UW7VNsqa8D"
+ slack: "solocoders:" secure: SLACK_KEY 
  on_success: always
  on_failure: always
