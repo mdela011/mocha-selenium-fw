@@ -21,4 +21,6 @@ script:
 
 notification:
  email: false
- slack: solocoders:Dx7Vk3AkjQ3SP4UW7VNsqa8D
+ slack:
+  rooms:
+    - solocoders:Dx7Vk3AkjQ3SP4UW7VNsqa8D#automation
