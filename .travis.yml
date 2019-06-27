@@ -1,4 +1,5 @@
 sudo: true
+file_glob: true
 
 addons:
  chrome: stable
