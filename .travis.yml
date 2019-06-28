@@ -23,11 +23,11 @@ before_script:
 
 script:
  - echo $SLACK_KEY
- - echo SLACK
+ - echo $SLACK
  - npm run smoke-test-gs-chrome
 
 notifications:
  email: false
- slack: solocoders:SLACK
+ slack: solocoders:$SLACK
  on_success: always
  on_failure: always
