@@ -18,6 +18,8 @@ before_script:
  - sleep 5 # give xvfb some time to start
  - "printenv SLACK_KEY"
  - "echo $SLACK_KEY"
+ - "echo SLACK_KEY"
+ - "bash test.sh"
 
 script:
  - npm run smoke-test-gs-chrome
