@@ -16,9 +16,6 @@ before_script:
  - "export DISPLAY=:99.0"
  - "sh -e /etc/init.d/xvfb start"
  - sleep 5 # give xvfb some time to start
- - "printenv SLACK_KEY"
- - "echo $SLACK_KEY"
- - "echo SLACK_KEY"
  - "bash test.sh"
 
 script:
