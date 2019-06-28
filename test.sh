@@ -1,2 +1,2 @@
 echo "executing bash file"
-export $SLACK_KEY
+export SLACK_KEY=$SLACK_KEY
