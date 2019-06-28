@@ -1,2 +1,3 @@
 echo "executing bash file"
-export $SLACK_KEY
+echo $SLACK_KEY
+echo "done"
