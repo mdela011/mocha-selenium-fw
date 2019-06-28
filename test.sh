@@ -1,2 +1,4 @@
 echo "executing bash file"
-export SLACK_KEY=$SLACK_KEY
+echo $SLACK_KEY
+echo env
+echo "done"
