@@ -1,6 +1,10 @@
 sudo: true
 file_glob: true
 
+env:
+ global:
+  - SLACK=$SLACK_KEY
+
 addons:
  chrome: stable
 
@@ -19,10 +23,11 @@ before_script:
 
 script:
  - echo $SLACK_KEY
+ - echo SLACK
  - npm run smoke-test-gs-chrome
 
 notifications:
  email: false
- slack: solocoders:${SLACK_KEY}
+ slack: solocoders:SLACK
  on_success: always
  on_failure: always
