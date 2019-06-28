@@ -28,6 +28,6 @@ script:
 
 notifications:
  email: false
- slack: solocoders:${SLACK}
+ slack: solocoders:echo $SLACK_KEY
  on_success: always
  on_failure: always
