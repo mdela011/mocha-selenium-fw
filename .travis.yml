@@ -16,7 +16,9 @@ before_script:
  - "export DISPLAY=:99.0"
  - "sh -e /etc/init.d/xvfb start"
  - sleep 5 # give xvfb some time to start
- - "bash test.sh"
+ - source test.sh
+ - echo $SLACK_KEY
+ - echo SLACK_KEY
 
 script:
  - npm run smoke-test-gs-chrome

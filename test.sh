@@ -1,5 +1,3 @@
 echo "executing bash file"
-echo $SLACK_KEY
-echo env
-echo env()
+export SLACK_KEY = $SLACK_KEY
 echo "done"
